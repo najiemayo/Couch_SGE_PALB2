@@ -1,9 +1,9 @@
 # Couch_SGE_BRCA2
 
-This repository contains two folders:
+This repository contains two primary folders:
 
-First Folder bio_info contains scripts to process raw data.
+1. `bio_info` contains scripts (R, Python, Wdl) to process raw data.
 
-Second folder data_analysis contains two folders, one for absolute risk analyis and one for functional score calculations. 
+2. `data_analysis` contains two folders, one for absolute risk analyis and one for functional score calculations. 
 
 
