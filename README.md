@@ -1,4 +1,4 @@
-# Couch_SGE_BRCA2
+# Couch_SGE_PALB2
 
 This repository contains two primary folders:
 
