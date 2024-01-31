@@ -16,50 +16,7 @@ render_report = function(Gene, Exon, Output_dir, loessSubset, EventCount_Filter,
   )
 }
 
-render_report2 = function(Gene, Exons, Input_dir, Output_dir, loessSubset, EventCount_Filter, vset, Score_method, Lab_curation, Ratio, MM, Outlierremove, clinvarfile, extraFilter = "No") {
-  #define main directory
-  main_dir <- paste0("###results/11_2023/", Output_dir)
-  
-  #create directory if it doesn't exist
-  if (!dir.exists(main_dir)) {
-    dir.create(main_dir)
-  }
-  
-  #define sub directory
-  sub_dir <- "reports"
-  
-  #define full directory
-  full_dir <- file.path(main_dir, sub_dir)
-  
-  #create directory if it doesn't exist
-  if (!dir.exists(full_dir)) {
-    dir.create(full_dir)
-  }
-  
-  rmarkdown::render(
-    "norm_classification_parm.Rmd", params = list(
-      Input_dir = Input_dir,
-      Output_dir = main_dir,
-      loessSubset = loessSubset, 
-      EventCount_Filter = EventCount_Filter,
-      vset = vset,
-      Score_method = Score_method,
-      Lab_curation = Lab_curation,
-      Exons = Exons,
-      Ratio = Ratio,
-      Gene = Gene,
-      MM = MM,
-      Outlierremove = Outlierremove,
-      clinvarfile = clinvarfile,
-      extraFilter = extraFilter
-    ),
-    output_file = paste0( paste0(main_dir,"/reports/" ), 
-                          Gene, "_", vset, "_", loessSubset, "_", EventCount_Filter, "_FS", Score_method, 
-                          "Lab_curation_", Lab_curation, "_E", gsub(", ", "", Exons),"_", Ratio,
-                          "_MM_", MM,
-                          "_Outlierremove_", Outlierremove,"_extraFilter_", extraFilter, ".html")
-  )
-}
+
 
 Gene <- "BRCA2"
 Es <-
